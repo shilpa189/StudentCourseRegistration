@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://microsoft.com/webservices/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://microsoft.com/webservices/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/webservices/">
+      <s:element name="validateUserAccountWS">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="emailIn" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="validateUserAccountWSResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="validateUserAccountWSResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCourseList">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="semIn" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCourseListResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getCourseListResult" type="tns:ArrayOfCourse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfCourse">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Course" nillable="true" type="tns:Course" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Course">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="courseID" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="courseName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="schedule" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="classtype" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="prof" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="prereqcourseid" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="descp" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="semester" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="classroom" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="isprereq" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="status" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getCourseDetails">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="courseID" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCourseDetailsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getCourseDetailsResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getStudentInfo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getStudentInfoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getStudentInfoResult" type="tns:ArrayOfString" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getuserid">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="emailIn" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getuseridResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getuseridResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="addcourse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="userid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="courseid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="semester" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="addcourseResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="addcourseResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getEnrolledCourses">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="semIn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="studentidIn" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getEnrolledCoursesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getEnrolledCoursesResult" type="tns:ArrayOfCourse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="dropCourse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="courseid" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="semester" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="studentid" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="dropCourseResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="dropCourseResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCourseHistory">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="semIn" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="studentidIn" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getCourseHistoryResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getCourseHistoryResult" type="tns:ArrayOfCourse" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="validateUserAccountWSSoapIn">
+    <wsdl:part name="parameters" element="tns:validateUserAccountWS" />
+  </wsdl:message>
+  <wsdl:message name="validateUserAccountWSSoapOut">
+    <wsdl:part name="parameters" element="tns:validateUserAccountWSResponse" />
+  </wsdl:message>
+  <wsdl:message name="getCourseListSoapIn">
+    <wsdl:part name="parameters" element="tns:getCourseList" />
+  </wsdl:message>
+  <wsdl:message name="getCourseListSoapOut">
+    <wsdl:part name="parameters" element="tns:getCourseListResponse" />
+  </wsdl:message>
+  <wsdl:message name="getCourseDetailsSoapIn">
+    <wsdl:part name="parameters" element="tns:getCourseDetails" />
+  </wsdl:message>
+  <wsdl:message name="getCourseDetailsSoapOut">
+    <wsdl:part name="parameters" element="tns:getCourseDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="getStudentInfoSoapIn">
+    <wsdl:part name="parameters" element="tns:getStudentInfo" />
+  </wsdl:message>
+  <wsdl:message name="getStudentInfoSoapOut">
+    <wsdl:part name="parameters" element="tns:getStudentInfoResponse" />
+  </wsdl:message>
+  <wsdl:message name="getuseridSoapIn">
+    <wsdl:part name="parameters" element="tns:getuserid" />
+  </wsdl:message>
+  <wsdl:message name="getuseridSoapOut">
+    <wsdl:part name="parameters" element="tns:getuseridResponse" />
+  </wsdl:message>
+  <wsdl:message name="addcourseSoapIn">
+    <wsdl:part name="parameters" element="tns:addcourse" />
+  </wsdl:message>
+  <wsdl:message name="addcourseSoapOut">
+    <wsdl:part name="parameters" element="tns:addcourseResponse" />
+  </wsdl:message>
+  <wsdl:message name="getEnrolledCoursesSoapIn">
+    <wsdl:part name="parameters" element="tns:getEnrolledCourses" />
+  </wsdl:message>
+  <wsdl:message name="getEnrolledCoursesSoapOut">
+    <wsdl:part name="parameters" element="tns:getEnrolledCoursesResponse" />
+  </wsdl:message>
+  <wsdl:message name="dropCourseSoapIn">
+    <wsdl:part name="parameters" element="tns:dropCourse" />
+  </wsdl:message>
+  <wsdl:message name="dropCourseSoapOut">
+    <wsdl:part name="parameters" element="tns:dropCourseResponse" />
+  </wsdl:message>
+  <wsdl:message name="getCourseHistorySoapIn">
+    <wsdl:part name="parameters" element="tns:getCourseHistory" />
+  </wsdl:message>
+  <wsdl:message name="getCourseHistorySoapOut">
+    <wsdl:part name="parameters" element="tns:getCourseHistoryResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebService1Soap">
+    <wsdl:operation name="validateUserAccountWS">
+      <wsdl:input message="tns:validateUserAccountWSSoapIn" />
+      <wsdl:output message="tns:validateUserAccountWSSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCourseList">
+      <wsdl:input message="tns:getCourseListSoapIn" />
+      <wsdl:output message="tns:getCourseListSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCourseDetails">
+      <wsdl:input message="tns:getCourseDetailsSoapIn" />
+      <wsdl:output message="tns:getCourseDetailsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getStudentInfo">
+      <wsdl:input message="tns:getStudentInfoSoapIn" />
+      <wsdl:output message="tns:getStudentInfoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getuserid">
+      <wsdl:input message="tns:getuseridSoapIn" />
+      <wsdl:output message="tns:getuseridSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="addcourse">
+      <wsdl:input message="tns:addcourseSoapIn" />
+      <wsdl:output message="tns:addcourseSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getEnrolledCourses">
+      <wsdl:input message="tns:getEnrolledCoursesSoapIn" />
+      <wsdl:output message="tns:getEnrolledCoursesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="dropCourse">
+      <wsdl:input message="tns:dropCourseSoapIn" />
+      <wsdl:output message="tns:dropCourseSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getCourseHistory">
+      <wsdl:input message="tns:getCourseHistorySoapIn" />
+      <wsdl:output message="tns:getCourseHistorySoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebService1Soap" type="tns:WebService1Soap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="validateUserAccountWS">
+      <soap:operation soapAction="http://microsoft.com/webservices/validateUserAccountWS" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCourseList">
+      <soap:operation soapAction="http://microsoft.com/webservices/getCourseList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCourseDetails">
+      <soap:operation soapAction="http://microsoft.com/webservices/getCourseDetails" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getStudentInfo">
+      <soap:operation soapAction="http://microsoft.com/webservices/getStudentInfo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getuserid">
+      <soap:operation soapAction="http://microsoft.com/webservices/getuserid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addcourse">
+      <soap:operation soapAction="http://microsoft.com/webservices/addcourse" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getEnrolledCourses">
+      <soap:operation soapAction="http://microsoft.com/webservices/getEnrolledCourses" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dropCourse">
+      <soap:operation soapAction="http://microsoft.com/webservices/dropCourse" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCourseHistory">
+      <soap:operation soapAction="http://microsoft.com/webservices/getCourseHistory" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebService1Soap12" type="tns:WebService1Soap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="validateUserAccountWS">
+      <soap12:operation soapAction="http://microsoft.com/webservices/validateUserAccountWS" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCourseList">
+      <soap12:operation soapAction="http://microsoft.com/webservices/getCourseList" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCourseDetails">
+      <soap12:operation soapAction="http://microsoft.com/webservices/getCourseDetails" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getStudentInfo">
+      <soap12:operation soapAction="http://microsoft.com/webservices/getStudentInfo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getuserid">
+      <soap12:operation soapAction="http://microsoft.com/webservices/getuserid" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addcourse">
+      <soap12:operation soapAction="http://microsoft.com/webservices/addcourse" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getEnrolledCourses">
+      <soap12:operation soapAction="http://microsoft.com/webservices/getEnrolledCourses" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="dropCourse">
+      <soap12:operation soapAction="http://microsoft.com/webservices/dropCourse" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCourseHistory">
+      <soap12:operation soapAction="http://microsoft.com/webservices/getCourseHistory" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebService1">
+    <wsdl:port name="WebService1Soap" binding="tns:WebService1Soap">
+      <soap:address location="http://localhost:49556/SRWebService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebService1Soap12" binding="tns:WebService1Soap12">
+      <soap12:address location="http://localhost:49556/SRWebService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

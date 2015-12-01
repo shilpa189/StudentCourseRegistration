@@ -1,0 +1,48 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.23107.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentRegistration", "StudentRegistration\StudentRegistration.csproj", "{01F41652-C957-4B2A-B201-0C00CBC529BF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StudentRegistrationWebServices", "StudentRegistrationWebServices\StudentRegistrationWebServices.csproj", "{56E45A4F-31F1-4B47-A448-8FC1037B847B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PublishScripts", "PublishScripts", "{D57CF8BB-DCB7-4B3E-813D-87C960712865}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\AzureVMPublishModule.psm1 = PublishScripts\AzureVMPublishModule.psm1
+		PublishScripts\Publish-WebApplicationVM.ps1 = PublishScripts\Publish-WebApplicationVM.ps1
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Configurations", "Configurations", "{40E023C9-EC3E-4691-9964-FD62A2C8573B}"
+	ProjectSection(SolutionItems) = preProject
+		PublishScripts\Configurations\StudentRegistrationWebServices-WAWS-dev.json = PublishScripts\Configurations\StudentRegistrationWebServices-WAWS-dev.json
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SRClasses", "SRClasses\SRClasses.csproj", "{2BDED436-A8EF-47DE-AFD5-72E9361BF072}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{01F41652-C957-4B2A-B201-0C00CBC529BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{01F41652-C957-4B2A-B201-0C00CBC529BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{01F41652-C957-4B2A-B201-0C00CBC529BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{01F41652-C957-4B2A-B201-0C00CBC529BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{56E45A4F-31F1-4B47-A448-8FC1037B847B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{56E45A4F-31F1-4B47-A448-8FC1037B847B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{56E45A4F-31F1-4B47-A448-8FC1037B847B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{56E45A4F-31F1-4B47-A448-8FC1037B847B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2BDED436-A8EF-47DE-AFD5-72E9361BF072}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BDED436-A8EF-47DE-AFD5-72E9361BF072}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BDED436-A8EF-47DE-AFD5-72E9361BF072}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BDED436-A8EF-47DE-AFD5-72E9361BF072}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{40E023C9-EC3E-4691-9964-FD62A2C8573B} = {D57CF8BB-DCB7-4B3E-813D-87C960712865}
+	EndGlobalSection
+EndGlobal
